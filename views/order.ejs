@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/order.css">
+</head>
+<body>
+   
+    <%-include('./partials/top.ejs')%>
+   <div class="heroleft"><ul><li>Add Restaurant Details</li>   
+   <li ><a href="/new/<%=id%>" style="text-decoration: none; color: black;">Add Menu Item</a></li></ul></div>
+    <div class="hero">
+        <div class="herobody">
+      <img src=<%=restaurantDetails.photo%> alt="">
+      <div class="toptitle"><%=restaurantDetails.name%></div>
+      <div class="specialities"><%=restaurantDetails.specialities%></div>
+      <div class="location"><%=restaurantDetails.location%></div>
+      <hr>
+      <div class="menu">
+        <%restaurantDetails.menu.forEach(menu=>{%>
+        <div class="menuitem">
+            <img src=<%=menu.foodImage%> alt="">
+            <div class="menuitembody">
+                <div class="title"><%=menu.foodName%></div>
+                <div class="description"><%=menu.foodDescription%></div>  
+                <div class="price">₹<%=menu.foodPrice%></div>
+            </div>
+            <button>Add To Cart</button>
+            </div>
+            <%})%>
+         </div>
+      </div>
+    </div>
+    </div>
+
+</body>
+</html>

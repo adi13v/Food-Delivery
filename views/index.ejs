@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+  </head>
+  <body>
+    <%-include('./partials/top.ejs')%>
+    <div class="hero">
+      <div class="heroleft" ><a style="text-decoration: none;color: black;" href="/new">Add Your New Restaurant</a> 
+      <a href="/logout">Logout</a></div>
+      <div class="herocenter">
+        <div class="welcomemessage">Welcome <%=name%></div>
+      <div class="herotitle">Restaurants in Bhubaneshwar</div>
+      <div class="restaurantlist">
+        <% restaurants.forEach(res => { %>
+          <div class="restrauntcard">
+            <img src="<%= res.imageURL %>" alt="<%= res.title %>">
+            <div class="restarauntcardbody">
+              <div class="restraunttitle"><%= res.title %></div>
+              <div class="restrauntother">
+              <div class="restrauntspeciality">Specialties: <%= res.speciality %></div>
+              <div class="restaurantsaverageprice">Average Order: <%= res.priceRange %></div>
+            </div>
+            </div>
+            <button><a href=<%=`order/${res.id}`%>>Order</a></button>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

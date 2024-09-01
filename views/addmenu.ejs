@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Restaurant</title>
+    <link rel="stylesheet" href="/stylesheets/form.css">
+   
+</head>
+<%-include('./partials/top.ejs')%>
+<body>
+    <h1>Add a New Item</h1>
+    <form action="/new/<%=id%>?_method=PUT" method="POST">
+       
+        <!-- Menu Items -->
+        <h2>Menu Items</h2>
+        <p>Enter details for one menu item:</p>
+       <% let i=1 %>
+       <div class="menu-item">
+       <h3>Menu Item </h3>
+            <div class="form-group">
+                <label for="foodImage<%= i %>">Food Image URL:</label>
+                <input type="text" value="aditya" id="foodImage<%= i %>" name="foodImage" required>
+            </div>
+
+            <div class="form-group">
+                <label for="foodName<%= i %>">Food Name:</label>
+                <input type="text"  value="aditya" id="foodName<%= i %>" name="foodName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="foodDescription<%= i %>">Food Description:</label>
+                <input type="text" value="aditya" id="foodDescription<%= i %>" name="foodDescription" required>
+            </div>
+
+            <div class="form-group">
+                <label for="foodPrice<%= i %>">Food Price:</label>
+                <input type="number" value=34 id="foodPrice<%= i %>" name="foodPrice" required>
+            </div>
+            <button type="button" class="btn-add-menu" onclick="">Add Menu Item</button>
+        </div>
+        <!-- Submit Button -->
+        <button type="submit">Add Restaurant</button>
+    </form>
+</body>
+</html>

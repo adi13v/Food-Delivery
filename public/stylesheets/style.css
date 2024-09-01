@@ -1,0 +1,177 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: white;
+    height: 100%;
+ 
+}
+
+.hamburger button{
+    background: none;
+    border: none;
+}
+.welcomemessage{
+ font-weight: 400;
+
+ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ color: red;
+}
+.top{
+z-index: 1;
+position: fixed;
+top: 0px;
+width: 100%;
+margin-bottom: 100px ;
+ align-items:center;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 20px 10px 10px;
+    border-bottom: 0.5px solid gray;
+    display: flex;
+   background-color: white;
+    font-size: 15px;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+.top .logo{
+    flex: 1;
+    font-size: 25px;
+    padding-left: 10px;
+}
+.hero{
+    display: flex;
+   height: 100%;
+   
+ 
+    
+}
+.heroleft a{
+    color: black;
+    text-decoration: none;
+}
+.heroleft{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 100px;
+    padding-left: 10px;
+    padding-right: 20px; 
+    margin-top: -10px;
+    opacity: 100%;
+    height: 100%;
+    width: 20% ;
+    font-weight: 500;
+    position: fixed;
+   top: 10px;
+   
+    background-color: rgba(220, 215, 215, 0.277);
+    transition:  100ms ease-in;
+    transform: translateX(-100%);
+
+}
+
+.heroleft li{
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+.heroleft li:hover{
+    cursor: pointer;
+}
+
+.herocenter{
+    margin-top: 60px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.herotitle{
+    font-size: 20px;
+    padding: 10px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+.restrauntother{
+    display: flex;
+    width: 100%;
+  justify-content: space-between;
+}
+
+.restaurantlist{
+    width: 70%;
+    padding: 20px;
+   
+gap: 20px;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+
+}
+.restrauntcard{
+    background-color: rgb(239, 236, 236);
+    width: 30%;
+    height: 20%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    transition: all 100ms linear;
+}
+.restrauntcard:hover{
+    background-color: rgb(218, 218, 217);
+    scale: 105%;
+}
+.restrauntcard img{
+    height: 70%;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
+.restarauntcardbody{
+    display: flex;
+  flex-direction: column;
+    align-items: center;
+    font-size: 0.7rem;
+}
+.restraunttitle{
+    font-size: 1.5rem;
+    font-weight: 400;
+  
+} 
+.restrauntcard button{
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    padding: 6px;
+    border: none;
+    background-color: rgb(29, 29, 88);
+border-bottom-left-radius: 8px;
+border-bottom-right-radius: 8px;
+margin-top: 7px;
+}
+.restrauntcard a{
+    color: white;
+    text-decoration: none;
+}
+
+.restaurantsaverageprice, .restrauntspeciality{
+    font-size: 0.8rem;
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.cart-icon{
+    font-size: 20px;
+}
+
+
+
+
+
