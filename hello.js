@@ -9,7 +9,7 @@ const newRouter = require('./routes/new');
 const orderRouter = require('./routes/order')
 const initializePassport = require('./passport-config')
 const methodOverride = require('method-override');
-const url = "mongodb+srv://aditya:test1234@nodeexpressprojects.gqjkbwn.mongodb.net/LittleChef?retryWrites=true&w=majority&appName=NodeExpressProjects"
+const url = process.env.URI;
 const connectDB = require('./db/connect')
 const {Restaurant , Menu} = require('./models/restaurant');
 const {registerNewUser} = require('./controllers/registerController')
@@ -25,18 +25,18 @@ app.use(flash());
 app.use(session({
     secret : process.env.SESSION_SECRET,
     resave:false,
-    saveUninitialized : false
+    saveUninitialized : false,
+    cookie:{maxAge : 6000000000}
 }))
 
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 app.set('view engine' ,'ejs' )
 app.use(express.static('public'))
 app.use(methodOverride('_method'));
 app.use(express.urlencoded( {extended:false} ))
-
+app.use(express.json());
 const start = async()=>{
     try{
         await connectDB(url);
@@ -78,7 +78,13 @@ app.get('/logout'  , (req,res,next)=>{
         if(err) return next(err);
     } , res.redirect('/'))
 })
-  
+app.post('/cart' , isAuthenticated,(req,res)=>{
+    console.log(req.body);
+})
+
+app.get('/cart' , (req,res)=>{
+    res.json(req.body);
+})
 app.use('/new' ,newRouter)
 app.use('/order' , orderRouter );
 
